@@ -23,12 +23,12 @@ class Task(ft.Column):
                     controls=[
                         ft.IconButton(
                             icon=ft.icons.CREATE_OUTLINED,
-                            tooltip="Edit To-Do",
+                            tooltip="Edytuj",
                             on_click=self.edit_clicked,
                         ),
                         ft.IconButton(
                             ft.icons.DELETE_OUTLINE,
-                            tooltip="Delete To-Do",
+                            tooltip="Usuń",
                             on_click=self.delete_clicked,
                         ),
                     ],
@@ -115,7 +115,7 @@ class TodoApp(ft.Column):
                         controls=[
                             self.items_left,
                             ft.OutlinedButton(
-                                text="Clear completed", on_click=self.clear_clicked
+                                text="Usuń ukończone zadania", on_click=self.clear_clicked
                             ),
                         ],
                     ),
@@ -157,7 +157,7 @@ class TodoApp(ft.Column):
             )
             if not task.completed:
                 count += 1
-        self.items_left.value = f"{count} active item(s) left"
+        self.items_left.value = f"{count} z aktywnych zadań"
 
 
 def main(page: ft.Page):
